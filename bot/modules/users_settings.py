@@ -308,9 +308,9 @@ async def get_user_settings(from_user, stype="main"):
             split_size = user_dict["LEECH_SPLIT_SIZE"]
         else:
             split_size = Config.LEECH_SPLIT_SIZE
-        buttons.data_button(
-            "Leech Destination", f"userset {user_id} menu LEECH_DUMP_CHAT"
-        )
+       # buttons.data_button(
+          #  "Leech Destination", f"userset {user_id} menu LEECH_DUMP_CHAT"
+      #  )
         if user_dict.get("LEECH_DUMP_CHAT", False):
             leech_dest = user_dict["LEECH_DUMP_CHAT"]
         elif "LEECH_DUMP_CHAT" not in user_dict and Config.LEECH_DUMP_CHAT:
@@ -441,7 +441,7 @@ async def get_user_settings(from_user, stype="main"):
 ┠ Leech Prefix → <code>{escape(lprefix)}</code>
 ┠ Leech Suffix → <code>{escape(lsuffix)}</code>
 ┠ Leech Caption → <code>{escape(lcap)}</code>
-┠ Leech Destination → <code>{leech_dest}</code>
+# ┠ Leech Destination → <code>{leech_dest}</code>
 ┠ Leech by <b>{leech_method}</b> session
 ┠ Mixed Leech → <b>{hybrid_leech}</b>
 ┖ Thumbnail Layout → <b>{thumb_layout}</b>
