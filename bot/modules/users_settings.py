@@ -432,7 +432,6 @@ async def get_user_settings(from_user, stype="main"):
 
         text = f"""⌬ <b>Leech Settings :</b>
 ┟ <b>Name</b> → {user_name}
-┃
 ┠ Leech Type → <b>{ltype}</b>
 ┠ Custom Thumbnail → <b>{thumbmsg}</b>
 ┠ Leech Split Size → <b>{get_readable_file_size(split_size)}</b>
