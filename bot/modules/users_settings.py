@@ -76,16 +76,16 @@ user_settings_text = {
         "",
         f"Send Leech split size in bytes or use gb or mb. Example: 40000000 or 2.5gb or 1000mb. PREMIUM_USER: {TgClient.IS_PREMIUM_USER}.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
     ),
-    "LEECH_DUMP_CHAT": (
-        "",
-        "",
-        """Send leech destination ID/USERNAME/PM. 
-* b:id/@username/pm (b: means leech by bot) (id or username of the chat or write pm means private message so bot will send the files in private to you) when you should use b:(leech by bot)? When your default settings is leech by user and you want to leech by bot for specific task.
-* u:id/@username(u: means leech by user) This incase OWNER added USER_STRING_SESSION.
-* h:id/@username(hybrid leech) h: to upload files by bot and user based on file size.
-* id/@username|topic_id(leech in specific chat and topic) add | without space and write topic id after chat id or username.
-┖ <b>Time Left :</b> <code>60 sec</code>""",
-    ),
+   # "LEECH_DUMP_CHAT": (
+     #   "",
+      #  "",
+       # """Send leech destination ID/USERNAME/PM. 
+#* b:id/@username/pm (b: means leech by bot) (id or username of the chat or write pm means private message so bot will send the files in private to you) when you should use b:(leech by bot)? When your default settings is leech by user and you want to leech by bot for specific task.
+#* u:id/@username(u: means leech by user) This incase OWNER added USER_STRING_SESSION.
+#* h:id/@username(hybrid leech) h: to upload files by bot and user based on file size.
+#* id/@username|topic_id(leech in specific chat and topic) add | without space and write topic id after chat id or username.
+#┖ <b>Time Left :</b> <code>60 sec</code>""",
+   # ),
     "LEECH_PREFIX": (
         "",
         "",
