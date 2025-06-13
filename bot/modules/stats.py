@@ -92,12 +92,12 @@ async def get_stats(event, key="home"):
 """
     elif key == "stsys":
         cpu_usage = cpu_percent(interval=0.5)
-        msg = f"""⌬ <b><i>🧩 OS SYSTEM :</i></b>
+        msg = f"""<b><i>🧩 OS SYSTEM :</i></b>
 ┟ <b>OS Uᴘᴛɪᴍᴇ :</b> {get_readable_time(time() - boot_time())}
 ┠ <b>OS Vᴇʀsɪᴏɴ :</b> {version()}
 ┖ <b>OS Aʀᴄʜ :</b> {platform()}
 
-⌬ <b><i>🛰️ NETWORK STATISTICS :</i></b>
+<b><i>🛰️ NETWORK STATISTICS :</i></b>
 ┟ <b>🔺 Uᴘʟᴏᴀᴅ Dᴀᴛᴀ:</b> {get_readable_file_size(net_io_counters().bytes_sent)}
 ┠ <b>🔻 Dᴏᴡɴʟᴏᴀᴅ Dᴀᴛᴀ:</b> {get_readable_file_size(net_io_counters().bytes_recv)}
 ┠ <b>Pᴋᴛs Sᴇɴᴛ:</b> {str(net_io_counters().packets_sent)[:-3]}k
