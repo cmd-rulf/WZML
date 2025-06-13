@@ -25,7 +25,7 @@ class BotCommands:
         "CancelTask": ["cancel", "c"],
         "CancelAll": ["cancelall", "call"],
         "ForceStart": ["forcestart", "fs"],
-        "Status": ["status", "s", "statusall"],
+        "Status": ["status", "s", "sall"],
         "MediaInfo": ["mediainfo", "mi"],
         "SpeedTest": ["speedtest", "stest"],
         "Ping": "ping",
