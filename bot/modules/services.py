@@ -162,10 +162,10 @@ async def login(_, message):
 @new_task
 async def ping(_, message):
     start_time = monotonic()
-    reply = await send_message(message, "<i>Starting Ping..</i>")
+    reply = await send_message(message, "<i>Starting Ping...🎮</i>")
     end_time = monotonic()
     await edit_message(
-        reply, f"<i>Pong!</i>\n <code>{int((end_time - start_time) * 1000)} ms</code>"
+        reply, f"🎯 Pɪɴɢ:<code>{int((end_time - start_time) * 1000)} ms</code>"
     )
 
 
