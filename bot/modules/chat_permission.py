@@ -31,13 +31,13 @@ async def authorize(_, message):
                 user_data[chat_id]["thread_ids"].append(thread_id)
             else:
                 user_data[chat_id]["thread_ids"] = [thread_id]
-            msg = "Authorized"
+            msg = "Aᴜᴛʜᴏʀɪᴢᴇᴅ"
     else:
         update_user_ldata(chat_id, "AUTH", True)
         if thread_id is not None:
             update_user_ldata(chat_id, "thread_ids", [thread_id])
         await database.update_user_data(chat_id)
-        msg = "Authorized"
+        msg = "Aᴜᴛʜᴏʀɪᴢᴇᴅ"
     await send_message(message, msg)
 
 
@@ -64,9 +64,9 @@ async def unauthorize(_, message):
         else:
             update_user_ldata(chat_id, "AUTH", False)
         await database.update_user_data(chat_id)
-        msg = "Unauthorized"
+        msg = "Uɴᴀᴜᴛʜᴏʀɪᴢᴇᴅ"
     else:
-        msg = "Already Unauthorized!"
+        msg = "Aʟʀᴇᴀᴅʏ Uɴᴀᴜᴛʜᴏʀɪᴢᴇᴅ!"
     await send_message(message, msg)
 
 
@@ -80,11 +80,11 @@ async def add_sudo(_, message):
         id_ = (reply_to.from_user or reply_to.sender_chat).id
     if id_:
         if id_ in user_data and user_data[id_].get("SUDO"):
-            msg = "Already Sudo!"
+            msg = "Aʟʀᴇᴀᴅʏ Sᴜᴅᴏ!"
         else:
             update_user_ldata(id_, "SUDO", True)
             await database.update_user_data(id_)
-            msg = "Promoted as Sudo"
+            msg = "Pʀᴏᴍᴏᴛᴇᴅ ᴀs Sᴜᴅᴏ"
     else:
         msg = "Give ID or Reply To message of whom you want to Promote."
     await send_message(message, msg)
@@ -101,7 +101,7 @@ async def remove_sudo(_, message):
     if id_ and id_ not in user_data or user_data[id_].get("SUDO"):
         update_user_ldata(id_, "SUDO", False)
         await database.update_user_data(id_)
-        msg = "Demoted"
+        msg = "Dᴇᴍᴏᴛᴇᴅ"
     else:
         msg = "Give ID or Reply To message of whom you want to remove from Sudo"
     await send_message(message, msg)
