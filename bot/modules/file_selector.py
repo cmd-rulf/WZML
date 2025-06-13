@@ -95,7 +95,7 @@ async def select(_, message):
         return
 
     SBUTTONS = bt_selection_buttons(id_)
-    msg = "Your download paused. Choose files then press Done Selecting button to resume downloading."
+    msg = "Yᴏᴜʀ Dᴏᴡɴʟᴏᴀᴅ Pᴀᴜsᴇᴅ. Cʜᴏᴏsᴇ ғɪʟᴇs Tʜᴇɴ Pʀᴇss Dᴏɴᴇ Sᴇʟᴇᴄᴛɪɴɢ Bᴜᴛᴛᴏɴ ᴛᴏ Rᴇsᴜᴍᴇ Dᴏᴡɴʟᴏᴀᴅɪɴɢ."
     await send_message(message, msg, SBUTTONS)
 
 
