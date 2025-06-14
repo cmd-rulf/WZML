@@ -132,7 +132,7 @@ async def get_stats(event, key="home"):
                 True,
             )
         )[0]
-        msg = f"""⌬ <b><i>Repo Statistics 📊  :</i></b>
+        msg = f"""📊 <b><i>Repo Statistics :</i></b>
 │
 ┟ <b>Bᴏᴛ Uᴘᴅᴀᴛᴇᴅ :</b> {last_commit}
 ┠ <b>Cᴜʀʀᴇɴᴛ Vᴇʀsɪᴏɴ :</b> {get_version()}
@@ -142,7 +142,7 @@ async def get_stats(event, key="home"):
 ⌬ <b>🧬 REMARKS 🧬 :</b> <code>{compare_versions(get_version(), official_v)}</code>
     """
     elif key == "stpkgs":
-        msg = f"""⌬ <b><i>PACKAGES STATISTICS 📚 :</i></b>
+        msg = f"""📚 <b><i>PACKAGES STATISTICS :</i></b>
 │
 ┟ <b>🐍 Pʏᴛʜᴏɴ:</b> {bot_cache["eng_versions"]["python"]}
 ┠ <b>📶 Aʀɪᴀ𝟸:</b> {bot_cache["eng_versions"]["aria2"]}
@@ -158,7 +158,7 @@ async def get_stats(event, key="home"):
 ┖ <b>⭕️ MᴇɢᴀSᴅᴋ:</b> {bot_cache["eng_versions"]["mega"]}
 """
     elif key == "tlimits":
-        msg = f"""⌬ <b><i>BOT LIMITATIONS 🚧 :</i></b>
+        msg = f"""🚧 <b><i>BOT LIMITATIONS :</i></b>
 │
 ┟ <b>🎯 Dɪʀᴇᴄᴛ :</b> {Config.DIRECT_LIMIT or "∞"} GB
 ┠ <b>🧲 Tᴏʀʀᴇɴᴛ :</b> {Config.TORRENT_LIMIT or "∞"} GB
