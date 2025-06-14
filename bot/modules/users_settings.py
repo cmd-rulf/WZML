@@ -249,8 +249,8 @@ async def get_user_settings(from_user, stype="main"):
             )
         buttons.data_button("❌ Cᴀɴᴄᴇʟ", f"userset {user_id} close", position="footer")
 
-        text = f"""⌬ <b>Usᴇʀ Sᴇᴛᴛɪɴɢs :</b>
-│
+        text = f"""👽 <u><b>Usᴇʀ Sᴇᴛᴛɪɴɢs :</b></u>
+        
 ┟ <b>Nᴀᴍᴇ</b> → {user_name}
 ┠ <b>UsᴇʀID</b> → #ID{user_id}
 ┠ <b>Usᴇʀɴᴀᴍᴇ</b> → @{from_user.username}
@@ -289,7 +289,7 @@ async def get_user_settings(from_user, stype="main"):
         )
         btns = buttons.build_menu(1)
 
-        text = f"""⌬ <b>Gᴇɴᴇʀᴀʟ Sᴇᴛᴛɪɴɢs :</b>
+        text = f"""🧠 <u><b>Gᴇɴᴇʀᴀʟ Sᴇᴛᴛɪɴɢs </b></u>
 ┟ <b>Nᴀᴍᴇ</b> → {user_name}
 ┃
 ┠ <b>Dᴇғᴀᴜʟᴛ Uᴘʟᴏᴀᴅ Pᴀᴄᴋᴀɢᴇ</b> → <b>{du}</b>
@@ -430,7 +430,7 @@ async def get_user_settings(from_user, stype="main"):
         buttons.data_button("❌ Cᴀɴᴄᴇʟ", f"userset {user_id} close", "footer")
         btns = buttons.build_menu(2)
 
-        text = f"""⌬ <b>Lᴇᴇᴄʜ Sᴇᴛᴛɪɴɢs :</b>
+        text = f"""🧲 <u><b>Lᴇᴇᴄʜ Sᴇᴛᴛɪɴɢs :</b></u>
 ┟ <b>Nᴀᴍᴇ</b> → {user_name}
 ┠ Lᴇᴇᴄʜ Tʏᴘᴇ → <b>{ltype}</b>
 ┠ Cᴜsᴛᴏᴍ Tʜᴜᴍʙɴᴀɪʟ → <b>{thumbmsg}</b>
