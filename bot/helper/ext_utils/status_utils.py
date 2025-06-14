@@ -21,41 +21,41 @@ SIZE_UNITS = ["B", "KB", "MB", "GB", "TB", "PB"]
 
 
 class MirrorStatus:
-    STATUS_UPLOAD = "Upload"
-    STATUS_DOWNLOAD = "Download"
-    STATUS_CLONE = "Clone"
-    STATUS_QUEUEDL = "QueueDl"
-    STATUS_QUEUEUP = "QueueUp"
-    STATUS_PAUSED = "Pause"
-    STATUS_ARCHIVE = "Archive"
-    STATUS_EXTRACT = "Extract"
-    STATUS_SPLIT = "Split"
-    STATUS_CHECK = "CheckUp"
-    STATUS_SEED = "Seed"
-    STATUS_SAMVID = "SamVid"
-    STATUS_CONVERT = "Convert"
-    STATUS_FFMPEG = "FFmpeg"
-    STATUS_YT = "YouTube"
-    STATUS_METADATA = "Metadata"
+    STATUS_UPLOAD = "Uᴘʟᴏᴀᴅɪɴɢ...📤"
+    STATUS_DOWNLOAD = "Dᴏᴡɴʟᴏᴀᴅɪɴɢ...📥"
+    STATUS_CLONE = "Cʟᴏɴɪɴɢ...♻️"
+    STATUS_QUEUEDL = "QᴜᴇᴜᴇDʟ 💤"
+    STATUS_QUEUEUP = "QᴜᴇᴜᴇUᴘ 💤"
+    STATUS_PAUSED = "Pᴀᴜsᴇ 🚫"
+    STATUS_ARCHIVE = "Aʀᴄʜɪᴠᴇ 🔐"
+    STATUS_EXTRACT = "Exᴛʀᴀᴄᴛ 📂"
+    STATUS_SPLIT = "Sᴘʟɪᴛᴛɪɴɢ...✂️"
+    STATUS_CHECK = "CʜᴇᴄᴋUᴘ 📝"
+    STATUS_SEED = "Sᴇᴇᴅɪɴɢ...⛈️"
+    STATUS_SAMVID = "SᴀᴍVɪᴅ 🎞️"
+    STATUS_CONVERT = "Cᴏɴᴠᴇʀᴛ 🎭"
+    STATUS_FFMPEG = "FFᴍᴘᴇɢ 🗳️"
+    STATUS_YT = "YᴏᴜTᴜʙᴇ 🎥"
+    STATUS_METADATA = "Mᴇᴛᴀᴅᴀᴛᴀ ⚙️"
 
 
 class EngineStatus:
     def __init__(self):
-        self.STATUS_ARIA2 = f"Aria2 v{bot_cache['eng_versions']['aria2']}"
-        self.STATUS_AIOHTTP = f"AioHttp v{bot_cache['eng_versions']['aiohttp']}"
-        self.STATUS_GDAPI = f"Google-API v{bot_cache['eng_versions']['gapi']}"
-        self.STATUS_QBIT = f"qBit v{bot_cache['eng_versions']['qBittorrent']}"
-        self.STATUS_TGRAM = f"Pyro v{bot_cache['eng_versions']['pyrofork']}"
-        self.STATUS_MEGA = f"MegaAPI v{bot_cache['eng_versions']['mega']}"
-        self.STATUS_YTDLP = f"yt-dlp v{bot_cache['eng_versions']['yt-dlp']}"
-        self.STATUS_FFMPEG = f"ffmpeg v{bot_cache['eng_versions']['ffmpeg']}"
-        self.STATUS_7Z = f"7z v{bot_cache['eng_versions']['7z']}"
-        self.STATUS_RCLONE = f"RClone v{bot_cache['eng_versions']['rclone']}"
-        self.STATUS_SABNZBD = f"SABnzbd+ v{bot_cache['eng_versions']['SABnzbd+']}"
-        self.STATUS_QUEUE = "QSystem v2"
-        self.STATUS_JD = "JDownloader v2"
-        self.STATUS_YT = "Youtube-Api"
-        self.STATUS_METADATA = "Metadata"
+        self.STATUS_ARIA2 = f"📶 Aʀɪᴀ𝟸 <code>v{bot_cache['eng_versions']['aria2']}</code>"
+        self.STATUS_AIOHTTP = f"🌐 AɪᴏHᴛᴛᴘ <code>v{bot_cache['eng_versions']['aiohttp']}</code>"
+        self.STATUS_GDAPI = f"♻️ Gᴏᴏɢʟᴇ-Aᴘɪ <code>v{bot_cache['eng_versions']['gapi']}</code>"
+        self.STATUS_QBIT = f"🦠 ǫBɪᴛ <code>v{bot_cache['eng_versions']['qBittorrent']}</code>"
+        self.STATUS_TGRAM = f"💥 PʏʀᴏFᴏʀᴋ <code>v{bot_cache['eng_versions']['pyrofork']}</code>"
+        self.STATUS_MEGA = f"⭕️ MᴇɢᴀSᴅᴋ <code>v{bot_cache['eng_versions']['mega']}</code>"
+        self.STATUS_YTDLP = f"⭐ ʏᴛ-ᴅʟᴘ <code>v{bot_cache['eng_versions']['yt-dlp']}</code>"
+        self.STATUS_FFMPEG = f"🍿 FғMᴘᴇɢ <code>v{bot_cache['eng_versions']['ffmpeg']}</code>"
+        self.STATUS_7Z = f"🛠 7zɪᴘ <code>v{bot_cache['eng_versions']['7z']}</code>"
+        self.STATUS_RCLONE = f"🍻 RCʟᴏɴᴇ <code>v{bot_cache['eng_versions']['rclone']}</code>"
+        self.STATUS_SABNZBD = f"🐙 SABɴᴢʙᴅ+ <code>v{bot_cache['eng_versions']['SABnzbd+']}</code>"
+        self.STATUS_QUEUE = "💤 QSʏsᴛᴇᴍ v2"
+        self.STATUS_JD = "☠️ JDᴏᴡɴʟᴏᴀᴅᴇʀ v2"
+        self.STATUS_YT = "♨️ Yᴏᴜᴛᴜʙᴇ-Aᴘɪ"
+        self.STATUS_METADATA = "⚙️ Mᴇᴛᴀᴅᴀᴛᴀ"
 
 
 STATUSES = {
@@ -194,9 +194,9 @@ def speed_string_to_bytes(size_text: str):
 def get_progress_bar_string(pct):
     pct = float(str(pct).strip("%"))
     p = min(max(pct, 0), 100)
-    cFull = int(p // 8)
-    p_str = "⬢" * cFull
-    p_str += "⬡" * (12 - cFull)
+    cFull = int(p // 10)
+    p_str = "█" * cFull
+    p_str += "▒" * (10 - cFull)
     return f"[{p_str}]"
 
 
