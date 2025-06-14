@@ -255,6 +255,7 @@ async def get_readable_message(sid, is_user, page_no=1, status="All", page_step=
             msg += f"\n┠ <b>Sᴘᴇᴇᴅ:</b> <code>{task.speed()}</code>"
             msg += f"\n┠ <b>Pᴀsᴛ:</b> <code>{get_readable_time(elapsed)}</code>"
             msg += f"\n┠ <b>Eɴɢɪɴᴇ:</b> {task.engine}"
+            msg += f"\n┠ <b>Mᴏᴅᴇ:</b> <i>{task.listener.mode[0]}</i> | <i>{task.listener.mode[1]}</i>"
             if tstatus == MirrorStatus.STATUS_DOWNLOAD and (
                 task.listener.is_torrent or task.listener.is_qbit
             ):
@@ -271,10 +272,9 @@ async def get_readable_message(sid, is_user, page_no=1, status="All", page_step=
             msg += f"\n┠ <b>Time:</b> <i>{task.seeding_time()}</i> | <b>Elapsed:</b> <i>{get_readable_time(elapsed)}</i>"
         else:
             msg += f"\n┠ <b>Sɪᴢᴇ:</b> <code>{task.size()}</code>"
-        msg += f"\n┠ <b>Mᴏᴅᴇ:</b> <i>{task.listener.mode[0]}</i> | <i>{task.listener.mode[1]}</i>"
         msg += f"\n┠ <b>Usᴇʀ:</b> {task.listener.message.from_user.mention(style='html')} | <code>{task.listener.message.from_user.id}</code>"
         # TODO: Add Bt Sel
-        msg += f"\n<b>┖ Sᴛᴏᴘ</b> → <i>/{BotCommands.CancelTaskCommand[1]}_{task.gid()}</i>\n\n"
+        msg += f"\n<b>┖ Sᴛᴏᴘ:</b> <i>/{BotCommands.CancelTaskCommand[1]}_{task.gid()}</i>\n\n"
 
     if len(msg) == 0:
         if status == "All":
