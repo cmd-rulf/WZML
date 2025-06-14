@@ -440,6 +440,8 @@ async def get_user_settings(from_user, stype="main"):
 ┠ Lᴇᴇᴄʜ Pʀᴇғɪx → <code>{escape(lprefix)}</code>
 ┠ Lᴇᴇᴄʜ Sᴜғғɪx → <code>{escape(lsuffix)}</code>
 ┠ Lᴇᴇᴄʜ Cᴀᴘᴛɪᴏɴ → <code>{escape(lcap)}</code>
+┠ Lᴇᴇᴄʜ ʙʏ <b>{leech_method}</b> session
+┠ Mɪxᴇᴅ Lᴇᴇᴄʜ → <b>{hybrid_leech}</b>
 ┖ Tʜᴜᴍʙɴᴀɪʟ Lᴀʏᴏᴜᴛ → <b>{thumb_layout}</b>
 """
 
