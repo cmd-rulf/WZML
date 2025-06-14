@@ -195,7 +195,7 @@ async def status_pages(_, query):
                 case _:
                     tasks["Download"] += 1
 
-        msg = f"""㊂ <b>Tasks Overview 🍻</b> :
+        msg = f"""🍻 <b>Tasks Overview</b> :
         
 ┎ <b>Download:</b> {tasks["Download"]} | <b>Upload:</b> {tasks["Upload"]}
 ┠ <b>Seed:</b> {tasks["Seed"]} | <b>Archive:</b> {tasks["Archive"]}
@@ -210,7 +210,7 @@ async def status_pages(_, query):
 ┖ <b>Total Seeding Speed:</b> {get_readable_file_size(seed_speed)}/s
 """
         button = ButtonMaker()
-        button.data_button("Back", f"status {data[1]} ref")
+        button.data_button("⏪ Bᴀᴄᴋ", f"status {data[1]} ref")
         await edit_message(message, msg, button.build_menu())
 
     try:
