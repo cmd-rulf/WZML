@@ -279,7 +279,7 @@ async def get_user_settings(from_user, stype="main"):
         )
 
         buttons.data_button("⏪ Bᴀᴄᴋ", f"userset {user_id} back", "footer")
-        buttons.data_button("Cʟᴏsᴇ", f"userset {user_id} close", "footer")
+        buttons.data_button("❌ Cᴀɴᴄᴇʟ", f"userset {user_id} close", "footer")
 
         use_user_cookie = user_dict.get("USE_USER_COOKIE", False)
         cookie_mode = "USER's" if use_user_cookie else "OWNER's"
