@@ -134,7 +134,7 @@ async def get_stats(event, key="home"):
         )[0]
         msg = f"""<b><u>Repo Statistics 📊 :</u></b>
 
-┟ <b>Bᴏᴛ Uᴘᴅᴀᴛᴇᴅ :</b> {last_commit}
+┎ <b>Bᴏᴛ Uᴘᴅᴀᴛᴇᴅ :</b> {last_commit}
 ┠ <b>Cᴜʀʀᴇɴᴛ Vᴇʀsɪᴏɴ :</b> {get_version()}
 ┠ <b>Lᴀᴛᴇsᴛ Vᴇʀsɪᴏɴ :</b> {official_v}
 ┖ <b>Lᴀsᴛ CʜᴀɴɢᴇLᴏɢ :</b> {changelog}
@@ -144,7 +144,7 @@ async def get_stats(event, key="home"):
     elif key == "stpkgs":
         msg = f"""<b><u>PACKAGES STATISTICS 📚 :</u></b>
 
-┟ <b>🐍 Pʏᴛʜᴏɴ:</b> {bot_cache["eng_versions"]["python"]}
+┎ <b>🐍 Pʏᴛʜᴏɴ:</b> {bot_cache["eng_versions"]["python"]}
 ┠ <b>📶 Aʀɪᴀ𝟸:</b> {bot_cache["eng_versions"]["aria2"]}
 ┠ <b>🦠 ǫBɪᴛ:</b> {bot_cache["eng_versions"]["qBittorrent"]}
 ┠ <b>🗳️ SABnzbd+:</b> {bot_cache["eng_versions"]["SABnzbd+"]}
@@ -160,7 +160,7 @@ async def get_stats(event, key="home"):
     elif key == "tlimits":
         msg = f"""<b><u>BOT LIMITATIONS 🚧 :</u></b>
         
-┟ <b>🎯 Dɪʀᴇᴄᴛ :</b> {Config.DIRECT_LIMIT or "∞"} GB
+┎ <b>🎯 Dɪʀᴇᴄᴛ :</b> {Config.DIRECT_LIMIT or "∞"} GB
 ┠ <b>🧲 Tᴏʀʀᴇɴᴛ :</b> {Config.TORRENT_LIMIT or "∞"} GB
 ┠ <b>☁️ GDʀɪᴠᴇ :</b> {Config.GD_DL_LIMIT or "∞"} GB
 ┠ <b>🧭 RCʟᴏɴᴇDL :</b> {Config.RC_DL_LIMIT or "∞"} GB
