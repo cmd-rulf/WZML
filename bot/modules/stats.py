@@ -132,17 +132,17 @@ async def get_stats(event, key="home"):
                 True,
             )
         )[0]
-        msg = f"""📊 <b><i>Repo Statistics :</i></b>
+        msg = f"""<b><i>Repo Statistics 📊 :</i></b>
 │
 ┟ <b>Bᴏᴛ Uᴘᴅᴀᴛᴇᴅ :</b> {last_commit}
 ┠ <b>Cᴜʀʀᴇɴᴛ Vᴇʀsɪᴏɴ :</b> {get_version()}
 ┠ <b>Lᴀᴛᴇsᴛ Vᴇʀsɪᴏɴ :</b> {official_v}
 ┖ <b>Lᴀsᴛ CʜᴀɴɢᴇLᴏɢ :</b> {changelog}
 
-⌬ <b>🧬 REMARKS 🧬 :</b> <code>{compare_versions(get_version(), official_v)}</code>
+<b>🧬 REMARKS :</b> <code>{compare_versions(get_version(), official_v)}</code>
     """
     elif key == "stpkgs":
-        msg = f"""📚 <b><i>PACKAGES STATISTICS :</i></b>
+        msg = f"""<b><i>PACKAGES STATISTICS 📚 :</i></b>
 │
 ┟ <b>🐍 Pʏᴛʜᴏɴ:</b> {bot_cache["eng_versions"]["python"]}
 ┠ <b>📶 Aʀɪᴀ𝟸:</b> {bot_cache["eng_versions"]["aria2"]}
@@ -158,7 +158,7 @@ async def get_stats(event, key="home"):
 ┖ <b>⭕️ MᴇɢᴀSᴅᴋ:</b> {bot_cache["eng_versions"]["mega"]}
 """
     elif key == "tlimits":
-        msg = f"""🚧 <b><i>BOT LIMITATIONS :</i></b>
+        msg = f"""<b><i>BOT LIMITATIONS 🚧 :</i></b>
 │
 ┟ <b>🎯 Dɪʀᴇᴄᴛ :</b> {Config.DIRECT_LIMIT or "∞"} GB
 ┠ <b>🧲 Tᴏʀʀᴇɴᴛ :</b> {Config.TORRENT_LIMIT or "∞"} GB
@@ -181,7 +181,7 @@ async def get_stats(event, key="home"):
 ┖ <b>👾 Bᴏᴛ Mᴀx Tᴀsᴋs :</b> {Config.BOT_MAX_TASKS or "∞"}
     """
 
-    btns.data_button("Close", f"stats {user_id} close", "footer")
+    btns.data_button("Cᴀɴᴄᴇʟ ❌", f"stats {user_id} close", "footer")
     return msg, btns.build_menu(2)
 
 
