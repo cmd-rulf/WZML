@@ -251,7 +251,7 @@ async def get_user_settings(from_user, stype="main"):
 
         text = f"""👽 <u><b>Usᴇʀ Sᴇᴛᴛɪɴɢs :</b></u>
         
-┟ <b>Nᴀᴍᴇ</b> → {user_name}
+┏ <b>Nᴀᴍᴇ</b> → {user_name}
 ┠ <b>UsᴇʀID</b> → #ID{user_id}
 ┠ <b>Usᴇʀɴᴀᴍᴇ</b> → @{from_user.username}
 ┠ <b>Tᴇʟᴇɢʀᴀᴍ DC</b> → {from_user.dc_id}
@@ -290,8 +290,8 @@ async def get_user_settings(from_user, stype="main"):
         btns = buttons.build_menu(1)
 
         text = f"""🧠 <u><b>Gᴇɴᴇʀᴀʟ Sᴇᴛᴛɪɴɢs </b></u>
-┟ <b>Nᴀᴍᴇ</b> → {user_name}
-┃
+        
+┏ <b>Nᴀᴍᴇ</b> → {user_name}
 ┠ <b>Dᴇғᴀᴜʟᴛ Uᴘʟᴏᴀᴅ Pᴀᴄᴋᴀɢᴇ</b> → <b>{du}</b>
 ┠ <b>Dᴇғᴀᴜʟᴛ Usᴀɢᴇ Mᴏᴅᴇ</b> → <b>{tr}'s</b> token/config
 ┖ <b>Cᴏᴏᴋɪᴇ Mᴏᴅᴇ</b> → <b>{cookie_mode}</b>
@@ -431,7 +431,8 @@ async def get_user_settings(from_user, stype="main"):
         btns = buttons.build_menu(2)
 
         text = f"""🧲 <u><b>Lᴇᴇᴄʜ Sᴇᴛᴛɪɴɢs :</b></u>
-┟ <b>Nᴀᴍᴇ</b> → {user_name}
+        
+┏ <b>Nᴀᴍᴇ</b> → {user_name}
 ┠ Lᴇᴇᴄʜ Tʏᴘᴇ → <b>{ltype}</b>
 ┠ Cᴜsᴛᴏᴍ Tʜᴜᴍʙɴᴀɪʟ → <b>{thumbmsg}</b>
 ┠ Lᴇᴇᴄʜ Sᴘʟɪᴛ Sɪᴢᴇ → <b>{get_readable_file_size(split_size)}</b>
@@ -471,9 +472,9 @@ async def get_user_settings(from_user, stype="main"):
         else:
             rcflags = "None"
 
-        text = f"""⌬ <b>RCʟᴏɴᴇ Sᴇᴛᴛɪɴɢs :</b>
-┟ <b>Nᴀᴍᴇ</b> → {user_name}
-┃
+        text = f"""🧭 <u><b>RCʟᴏɴᴇ Sᴇᴛᴛɪɴɢs :</b></u>
+        
+┏ <b>Nᴀᴍᴇ</b> → {user_name}
 ┠ <b>Rᴄʟᴏɴᴇ Cᴏɴғɪɢ</b> → <b>{rccmsg}</b>
 ┠ <b>Rᴄʟᴏɴᴇ Fʟᴀɢs</b> → <code>{rcflags}</code>
 ┖ <b>Rᴄʟᴏɴᴇ Pᴀᴛʜ</b> → <code>{rccpath}</code>"""
@@ -511,9 +512,9 @@ async def get_user_settings(from_user, stype="main"):
         index = user_dict["INDEX_URL"] if user_dict.get("INDEX_URL", False) else "None"
         btns = buttons.build_menu(2)
 
-        text = f"""⌬ <b>GDʀɪᴠᴇ Tᴏᴏʟs Sᴇᴛᴛɪɴɢs :</b>
-┟ <b>Nᴀᴍᴇ</b> → {user_name}
-┃
+        text = f"""☁️ <u><b>GDʀɪᴠᴇ Tᴏᴏʟs Sᴇᴛᴛɪɴɢs :</b></u>
+        
+┏ <b>Nᴀᴍᴇ</b> → {user_name}
 ┠ <b>Gᴅʀɪᴠᴇ Tᴏᴋᴇɴ</b> → <b>{tokenmsg}</b>
 ┠ <b>Gᴅʀɪᴠᴇ ID</b> → <code>{gdrive_id}</code>
 ┠ <b>Iɴᴅᴇx URL</b> → <code>{index}</code>
@@ -552,9 +553,9 @@ async def get_user_settings(from_user, stype="main"):
         buttons.data_button("❌ Cᴀɴᴄᴇʟ", f"userset {user_id} close", "footer")
         btns = buttons.build_menu(1)
 
-        text = f"""⌬ <b>Mɪʀʀᴏʀ Sᴇᴛᴛɪɴɢs :</b>
-┟ <b>Nᴀᴍᴇ</b> → {user_name}
-┃
+        text = f"""☠️ <u><b>Mɪʀʀᴏʀ Sᴇᴛᴛɪɴɢs </b></u>
+        
+┏ <b>Nᴀᴍᴇ</b> → {user_name}
 ┠ <b>Rᴄʟᴏɴᴇ Cᴏɴғɪɢ</b> → <b>{rccmsg}</b>
 ┠ <b>Rᴄʟᴏɴᴇ Pᴀᴛʜ</b> → <code>{rccpath}</code>
 ┠ <b>Gᴅʀɪᴠᴇ Tᴏᴋᴇɴ</b> → <b>{tokenmsg}</b>
@@ -597,9 +598,9 @@ async def get_user_settings(from_user, stype="main"):
         buttons.data_button("❌ Cᴀɴᴄᴇʟ", f"userset {user_id} close", "footer")
         btns = buttons.build_menu(2)
 
-        text = f"""⌬ <b>FF Sᴇᴛᴛɪɴɢs :</b>
-┟ <b>Nᴀᴍᴇ</b> → {user_name}
-┃
+        text = f"""🗳️ <u><b>FF Sᴇᴛᴛɪɴɢs :</b></u>
+        
+┏ <b>Nᴀᴍᴇ</b> → {user_name}
 ┠ <b>FFᴍᴘᴇɢ Cᴏᴍᴍᴀɴᴅs</b> → {ffc}
 ┖ <b>Mᴇᴛᴀᴅᴀᴛᴀ</b> → {display_meta_val}"""
 
@@ -651,9 +652,8 @@ async def get_user_settings(from_user, stype="main"):
         buttons.data_button("❌ Cᴀɴᴄᴇʟ", f"userset {user_id} close", "footer")
         btns = buttons.build_menu(1)
 
-        text = f"""⌬ <b>Aᴅᴠᴀɴᴄᴇᴅ Sᴇᴛᴛɪɴɢs :</b>
-┟ <b>Nᴀᴍᴇ</b> → {user_name}
-┃
+        text = f"""🧩 <u><b>Aᴅᴠᴀɴᴄᴇᴅ Sᴇᴛᴛɪɴɢs :</b></u>
+┏ <b>Nᴀᴍᴇ</b> → {user_name}
 ┠ <b>Nᴀᴍᴇ Sᴡᴀᴘ</b> → {ns_msg}
 ┠ <b>Exᴄʟᴜᴅᴇᴅ Exᴛᴇɴsɪᴏɴs</b> → <code>{ex_ex}</code>
 ┠ <b>Uᴘʟᴏᴀᴅ Pᴀᴛʜs</b> → <b>{upload_paths}</b>
@@ -700,9 +700,8 @@ async def get_user_settings(from_user, stype="main"):
         buttons.data_button("❌ Cᴀɴᴄᴇʟ", f"userset {user_id} close", "footer")
         btns = buttons.build_menu(2)
 
-        text = f"""⌬ <b>YᴏᴜTᴜʙᴇ Tᴏᴏʟs Sᴇᴛᴛɪɴɢs:</b>
-┟ <b>Nᴀᴍᴇ</b> → {user_name}
-┃
+        text = f"""♨️ <u><b>YᴏᴜTᴜʙᴇ Tᴏᴏʟs Sᴇᴛᴛɪɴɢs:</b></u>
+┏ <b>Nᴀᴍᴇ</b> → {user_name}
 ┠ <b>YT Dᴇsᴄʀɪᴘᴛɪᴏɴ</b> → <code>{escape(str(yt_desp_val))}</code>
 ┠ <b>YT Tᴀɢs</b> → <code>{escape(str(yt_tags_val))}</code>
 ┠ <b>YT Cᴀᴛᴇɢᴏʀʏ ID</b> → <code>{escape(str(yt_cat_id_val))}</code>
@@ -939,10 +938,9 @@ async def get_menu(option, message, user_id):
         if val is None:
             val = "<b>Not Exists</b>"
 
-    text = f"""⌬ <b><u>Mᴇɴᴜ Sᴇᴛᴛɪɴɢs :</u></b>
-│
-┟ <b>Oᴘᴛɪᴏɴ</b> → {option}
-┃
+    text = f"""⚙️ <b><u>Mᴇɴᴜ Sᴇᴛᴛɪɴɢs :</u></b>
+
+┏ <b>Oᴘᴛɪᴏɴ</b> → {option}
 ┠ <b>Oᴘᴛɪᴏɴ's Vᴀʟᴜᴇ</b> → {val if val else "<b>Not Exists</b>"}
 ┃
 ┠ <b>Dᴇғᴀᴜʟᴛ Iɴᴘᴜᴛ Tʏᴘᴇ</b> → {user_settings_text[option][0]}
