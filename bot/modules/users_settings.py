@@ -221,7 +221,7 @@ async def get_user_settings(from_user, stype="main"):
 
     if stype == "main":
         buttons.data_button(
-            "General Settings", f"userset {user_id} general", position="header"
+            "Gᴇɴᴇʀᴀʟ Sᴇᴛᴛɪɴɢs", f"userset {user_id} general", position="header"
         )
         buttons.data_button("Mɪʀʀᴏʀ Sᴇᴛᴛɪɴɢs", f"userset {user_id} mirror")
         buttons.data_button("Lᴇᴇᴄʜ Sᴇᴛᴛɪɴɢs", f"userset {user_id} leech")
@@ -247,7 +247,7 @@ async def get_user_settings(from_user, stype="main"):
             buttons.data_button(
                 "Rᴇsᴇᴛ Aʟʟ", f"userset {user_id} confirm_reset_all", position="footer"
             )
-        buttons.data_button("Cʟᴏsᴇ", f"userset {user_id} close", position="footer")
+        buttons.data_button("❌ Cᴀɴᴄᴇʟ", f"userset {user_id} close", position="footer")
 
         text = f"""⌬ <b>Usᴇʀ Sᴇᴛᴛɪɴɢs :</b>
 │
