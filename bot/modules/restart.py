@@ -50,7 +50,7 @@ async def restart_sessions(_, message):
 
 async def send_incomplete_task_message(cid, msg_id, msg):
     try:
-        if msg.startswith("⌬ <b><i>Rᴇsᴛᴀʀᴛᴇᴅ Sᴜᴄᴄᴇssғᴜʟʟʏ!</i></b>"):
+        if msg.startswith("⌬ <b><i>Rᴇsᴛᴀʀᴛᴇᴅ Sᴜᴄᴄᴇssғᴜʟʟʏ ✅</i></b>"):
             await TgClient.bot.edit_message_text(
                 chat_id=cid,
                 message_id=msg_id,
@@ -81,7 +81,7 @@ async def restart_notification():
     if Config.INCOMPLETE_TASK_NOTIFIER and Config.DATABASE_URL:
         if notifier_dict := await database.get_incomplete_tasks():
             for cid, data in notifier_dict.items():
-                msg = f"""⌬ <b><i>{"Rᴇsᴛᴀʀᴛᴇᴅ Sᴜᴄᴄᴇssғᴜʟʟʏ!" if cid == chat_id else "Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ!"}</i></b>
+                msg = f"""⌬ <b><i>{"Rᴇsᴛᴀʀᴛᴇᴅ Sᴜᴄᴄᴇssғᴜʟʟʏ ✅" if cid == chat_id else "Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ! ✅"}</i></b>
 ┟ <b>Dᴀᴛᴇ:</b> {now.strftime("%d/%m/%y")}
 ┠ <b>Tɪᴍᴇ:</b> {now.strftime("%I:%M:%S %p")}
 ┠ <b>TɪᴍᴇZᴏɴᴇ:</b> Asia/Kolkata
@@ -121,7 +121,7 @@ async def confirm_restart(_, query):
     await delete_message(message)
     if data[1] == "confirm":
         intervals["stopAll"] = True
-        restart_message = await send_message(reply_to, "<i>Rᴇsᴛᴀʀᴛɪɴɢ...</i>")
+        restart_message = await send_message(reply_to, "<i>Rᴇsᴛᴀʀᴛɪɴɢ....♻️</i>")
         await delete_message(message)
         await TgClient.stop()
         if scheduler.running:
