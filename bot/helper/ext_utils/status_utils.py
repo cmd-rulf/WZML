@@ -226,12 +226,11 @@ async def get_readable_message(sid, is_user, page_no=1, status="All", page_step=
         else:
             tstatus = task.status()
         msg += f"<b>{index + start_position}.</b> "
-        msg += f"<b><i>{escape(f'{task.name()}')}</i></b>"
+        msg += f"<b><i>{escape(f'{task.name()}')}</i></b"
         if task.listener.subname:
             msg += f"\n┖ <b>Sub Name</b> → <i>{task.listener.subname}</i>"
         elapsed = time() - task.listener.message.date.timestamp()
 
-        msg += f"\n\n<b>Task By {task.listener.message.from_user.mention(style='html')}</b> | <code>{task.listener.message.from_user.id}</code>"
         if task.listener.is_super_chat:
             msg += f" <i>[<a href='{task.listener.message.link}'>Link</a>]</i>"
 
@@ -239,8 +238,9 @@ async def get_readable_message(sid, is_user, page_no=1, status="All", page_step=
             tstatus not in [MirrorStatus.STATUS_SEED, MirrorStatus.STATUS_QUEUEUP]
             and task.listener.progress
         ):
+            msg += f"\n┎ {tstatus}"
             progress = task.progress()
-            msg += f"\n┟ {get_progress_bar_string(progress)} <i>{progress}</i>"
+            msg += f"\n┃ {get_progress_bar_string(progress)} <i>{progress}</i>"
             if task.listener.subname:
                 subsize = f" / {get_readable_file_size(task.listener.subsize)}"
                 ac = len(task.listener.files_to_proceed)
@@ -251,7 +251,6 @@ async def get_readable_message(sid, is_user, page_no=1, status="All", page_step=
             msg += f"\n┠ <i>{task.processed_bytes()}{subsize} of {task.size()}</i>"
             if count:
                 msg += f"\n┠ <b>Count:</b> → <b>{count}</b>"
-            msg += f"\n┠ <b>Sᴛᴀᴛᴜs:</b> {tstatus}"
             msg += f"\n┠ <b>ETA:</b> <code>{task.eta()}</code>"
             msg += f"\n┠ <b>Sᴘᴇᴇᴅ:</b> <code>{task.speed()}</code>"
             msg += f"\n┠ <b>Pᴀsᴛ:</b> <code>{get_readable_time(elapsed)}</code>"
@@ -273,6 +272,7 @@ async def get_readable_message(sid, is_user, page_no=1, status="All", page_step=
             msg += f"\n┠ <b>Sɪᴢᴇ:</b> <i>{task.size()}</i>"
         msg += f"\n┠ <b>Eɴɢɪɴᴇ:</b> {task.engine}"
         msg += f"\n┠ <b>Mᴏᴅᴇ:</b> <i>{task.listener.mode[0]}</i> | <i>{task.listener.mode[1]}</i>"
+        msg += f"\n┠ <b>Usᴇʀ:</b> {task.listener.message.from_user.mention(style='html')} | <code>{task.listener.message.from_user.id}</code>"
         # TODO: Add Bt Sel
         msg += f"\n<b>┖ Sᴛᴏᴘ</b> → <i>/{BotCommands.CancelTaskCommand[1]}_{task.gid()}</i>\n\n"
 
