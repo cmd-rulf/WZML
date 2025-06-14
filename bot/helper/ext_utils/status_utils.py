@@ -21,17 +21,17 @@ SIZE_UNITS = ["B", "KB", "MB", "GB", "TB", "PB"]
 
 
 class MirrorStatus:
-    STATUS_UPLOAD = "Uᴘʟᴏᴀᴅɪɴɢ...📤"
-    STATUS_DOWNLOAD = "Dᴏᴡɴʟᴏᴀᴅɪɴɢ...📥"
+    STATUS_UPLOAD = "Uᴘʟᴏᴀᴅɪɴɢ... 📤"
+    STATUS_DOWNLOAD = "Dᴏᴡɴʟᴏᴀᴅɪɴɢ... 📥"
     STATUS_CLONE = "Cʟᴏɴɪɴɢ...♻️"
     STATUS_QUEUEDL = "QᴜᴇᴜᴇDʟ 💤"
     STATUS_QUEUEUP = "QᴜᴇᴜᴇUᴘ 💤"
     STATUS_PAUSED = "Pᴀᴜsᴇ 🚫"
     STATUS_ARCHIVE = "Aʀᴄʜɪᴠᴇ 🔐"
     STATUS_EXTRACT = "Exᴛʀᴀᴄᴛ 📂"
-    STATUS_SPLIT = "Sᴘʟɪᴛᴛɪɴɢ...✂️"
+    STATUS_SPLIT = "Sᴘʟɪᴛᴛɪɴɢ... ✂️"
     STATUS_CHECK = "CʜᴇᴄᴋUᴘ 📝"
-    STATUS_SEED = "Sᴇᴇᴅɪɴɢ...⛈️"
+    STATUS_SEED = "Sᴇᴇᴅɪɴɢ... ⛈️"
     STATUS_SAMVID = "SᴀᴍVɪᴅ 🎞️"
     STATUS_CONVERT = "Cᴏɴᴠᴇʀᴛ 🎭"
     STATUS_FFMPEG = "FFᴍᴘᴇɢ 🗳️"
@@ -226,7 +226,7 @@ async def get_readable_message(sid, is_user, page_no=1, status="All", page_step=
         else:
             tstatus = task.status()
         msg += f"<b>{index + start_position}.</b> "
-        msg += f"<b><i>{escape(f'{task.name()}')}</i></b"
+        msg += f"<b><i>{escape(f'{task.name()}')}</i></b>"
         if task.listener.subname:
             msg += f"\n┖ <b>Sub Name</b> → <i>{task.listener.subname}</i>"
         elapsed = time() - task.listener.message.date.timestamp()
@@ -248,12 +248,13 @@ async def get_readable_message(sid, is_user, page_no=1, status="All", page_step=
             else:
                 subsize = ""
                 count = ""
-            msg += f"\n┠ <i>{task.processed_bytes()}{subsize} of {task.size()}</i>"
+            msg += f"\n┠ <code>{task.processed_bytes()}{subsize} of {task.size()}</code>"
             if count:
-                msg += f"\n┠ <b>Count:</b> → <b>{count}</b>"
+                msg += f"\n┠ <b>Count:</b> <b>{count}</b>"
             msg += f"\n┠ <b>ETA:</b> <code>{task.eta()}</code>"
             msg += f"\n┠ <b>Sᴘᴇᴇᴅ:</b> <code>{task.speed()}</code>"
             msg += f"\n┠ <b>Pᴀsᴛ:</b> <code>{get_readable_time(elapsed)}</code>"
+            msg += f"\n┠ <b>Eɴɢɪɴᴇ:</b> {task.engine}"
             if tstatus == MirrorStatus.STATUS_DOWNLOAD and (
                 task.listener.is_torrent or task.listener.is_qbit
             ):
@@ -269,8 +270,7 @@ async def get_readable_message(sid, is_user, page_no=1, status="All", page_step=
             msg += f"\n┠ <b>Rᴀᴛɪᴏ:</b> <i>{task.ratio()}</i>"
             msg += f"\n┠ <b>Time:</b> <i>{task.seeding_time()}</i> | <b>Elapsed:</b> <i>{get_readable_time(elapsed)}</i>"
         else:
-            msg += f"\n┠ <b>Sɪᴢᴇ:</b> <i>{task.size()}</i>"
-        msg += f"\n┠ <b>Eɴɢɪɴᴇ:</b> {task.engine}"
+            msg += f"\n┠ <b>Sɪᴢᴇ:</b> <code>{task.size()}</code>"
         msg += f"\n┠ <b>Mᴏᴅᴇ:</b> <i>{task.listener.mode[0]}</i> | <i>{task.listener.mode[1]}</i>"
         msg += f"\n┠ <b>Usᴇʀ:</b> {task.listener.message.from_user.mention(style='html')} | <code>{task.listener.message.from_user.id}</code>"
         # TODO: Add Bt Sel
