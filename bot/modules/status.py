@@ -48,7 +48,7 @@ async def task_status(_, message):
 
 ⌬ <b><u>Bᴏᴛ Sᴛᴀᴛs...</u></b>
 ┟ <b>🖥️ Cᴘᴜ:</b> {cpu_percent()}% | <b>💿 F:</b> {free}
-┖ <b>🎮 Rᴀᴍ:</b> {virtual_memory().percent}% | <b>🚀 Uᴘᴛɪᴍᴇ:</b> {currentTime}
+┖ <b>🎮 Rᴀᴍ:</b> {virtual_memory().percent}% | <b>🚀 Uᴘ:</b> {currentTime}
 """
         reply_message = await send_message(message, msg)
         await auto_delete_message(message, reply_message)
@@ -195,19 +195,19 @@ async def status_pages(_, query):
                 case _:
                     tasks["Download"] += 1
 
-        msg = f"""🍻 <b>Tasks Overview</b> :
+        msg = f"""🍻 <b>Tᴀsᴋs Oᴠᴇʀᴠɪᴇᴡ</b> :
         
-┎ <b>Download:</b> {tasks["Download"]} | <b>Upload:</b> {tasks["Upload"]}
-┠ <b>Seed:</b> {tasks["Seed"]} | <b>Archive:</b> {tasks["Archive"]}
-┠ <b>Extract:</b> {tasks["Extract"]} | <b>Split:</b> {tasks["Split"]}
-┠ <b>QueueDL:</b> {tasks["QueueDl"]} | <b>QueueUP:</b> {tasks["QueueUp"]}
-┠ <b>Clone:</b> {tasks["Clone"]} | <b>CheckUp:</b> {tasks["CheckUp"]}
-┠ <b>Paused:</b> {tasks["Pause"]} | <b>SamVideo:</b> {tasks["SamVid"]}
-┞ <b>Convert:</b> {tasks["ConvertMedia"]} | <b>FFmpeg:</b> {tasks["FFmpeg"]}
+┎ <b>Dᴏᴡɴʟᴏᴀᴅ:</b> {tasks["Download"]} | <b>Uᴘʟᴏᴀᴅ:</b> {tasks["Upload"]}
+┠ <b>Sᴇᴇᴅ:</b> {tasks["Seed"]} | <b>Aʀᴄʜɪᴠᴇ:</b> {tasks["Archive"]}
+┠ <b>Exᴛʀᴀᴄᴛ:</b> {tasks["Extract"]} | <b>Sᴘʟɪᴛ:</b> {tasks["Split"]}
+┠ <b>QᴜᴇᴜᴇDL:</b> {tasks["QueueDl"]} | <b>QᴜᴇᴜᴇUP:</b> {tasks["QueueUp"]}
+┠ <b>Cʟᴏɴᴇ:</b> {tasks["Clone"]} | <b>CʜᴇᴄᴋUᴘ:</b> {tasks["CheckUp"]}
+┠ <b>Pᴀᴜsᴇᴅ:</b> {tasks["Pause"]} | <b>SᴀᴍVɪᴅᴇᴏ:</b> {tasks["SamVid"]}
+┞ <b>Cᴏɴᴠᴇʀᴛ:</b> {tasks["ConvertMedia"]} | <b>FFᴍᴘᴇɢ:</b> {tasks["FFmpeg"]}
 │
-┟ <b>Total Download Speed:</b> {get_readable_file_size(dl_speed)}/s
-┠ <b>Total Upload Speed:</b> {get_readable_file_size(up_speed)}/s
-┖ <b>Total Seeding Speed:</b> {get_readable_file_size(seed_speed)}/s
+┟ <b>Tᴏᴛᴀʟ Dᴏᴡɴʟᴏᴀᴅ Sᴘᴇᴇᴅ:</b> {get_readable_file_size(dl_speed)}/s
+┠ <b>Tᴏᴛᴀʟ Uᴘʟᴏᴀᴅ Sᴘᴇᴇᴅ:</b> {get_readable_file_size(up_speed)}/s
+┖ <b>Tᴏᴛᴀʟ Sᴇᴇᴅɪɴɢ Sᴘᴇᴇᴅ:</b> {get_readable_file_size(seed_speed)}/s
 """
         button = ButtonMaker()
         button.data_button("⏪ Bᴀᴄᴋ", f"status {data[1]} ref")
