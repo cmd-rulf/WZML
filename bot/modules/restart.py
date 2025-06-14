@@ -27,8 +27,8 @@ from ..helper.telegram_helper.message_utils import (
 @new_task
 async def restart_bot(_, message):
     buttons = button_build.ButtonMaker()
-    buttons.data_button("Yes!", "botrestart confirm")
-    buttons.data_button("No!", "botrestart cancel")
+    buttons.data_button("Yᴇs ✅", "botrestart confirm")
+    buttons.data_button("Nᴏ ❌", "botrestart cancel")
     button = buttons.build_menu(2)
     await send_message(
         message, "<i>Aʀᴇ Yᴏᴜ Rᴇᴀʟʟʏ Sᴜʀᴇ Yᴏᴜ Wᴀɴᴛ ᴛᴏ Rᴇsᴛᴀʀᴛ ᴛʜᴇ Bᴏᴛ ?</i>", button
