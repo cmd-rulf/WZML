@@ -451,7 +451,7 @@ async def get_user_settings(from_user, stype="main"):
         buttons.data_button("Rᴄʟᴏɴᴇ Fʟᴀɢs", f"userset {user_id} menu RCLONE_FLAGS")
 
         buttons.data_button("⏪ Bᴀᴄᴋ", f"userset {user_id} back mirror", "footer")
-        buttons.data_button("Cʟᴏsᴇ", f"userset {user_id} close", "footer")
+        buttons.data_button("❌ Cᴀɴᴄᴇʟ", f"userset {user_id} close", "footer")
 
         rccmsg = "Exists" if await aiopath.exists(rclone_conf) else "Not Exists"
         if user_dict.get("RCLONE_PATH", False):
@@ -497,7 +497,7 @@ async def get_user_settings(from_user, stype="main"):
             )
             sd_msg = "Disabled"
         buttons.data_button("⏪ Bᴀᴄᴋ", f"userset {user_id} back mirror", "footer")
-        buttons.data_button("Cʟᴏsᴇ", f"userset {user_id} close", "footer")
+        buttons.data_button("❌ Cᴀɴᴄᴇʟ", f"userset {user_id} close", "footer")
 
         tokenmsg = "Exists" if await aiopath.exists(token_pickle) else "Not Exists"
         if user_dict.get("GDRIVE_ID", False):
@@ -547,7 +547,7 @@ async def get_user_settings(from_user, stype="main"):
 
         buttons.data_button("YT Tools", f"userset {user_id} yttools")
         buttons.data_button("⏪ Bᴀᴄᴋ", f"userset {user_id} back", "footer")
-        buttons.data_button("Cʟᴏsᴇ", f"userset {user_id} close", "footer")
+        buttons.data_button("❌ Cᴀɴᴄᴇʟ", f"userset {user_id} close", "footer")
         btns = buttons.build_menu(1)
 
         text = f"""⌬ <b>Mɪʀʀᴏʀ Sᴇᴛᴛɪɴɢs :</b>
@@ -592,7 +592,7 @@ async def get_user_settings(from_user, stype="main"):
             )
 
         buttons.data_button("⏪ Bᴀᴄᴋ", f"userset {user_id} back", "footer")
-        buttons.data_button("Cʟᴏsᴇ", f"userset {user_id} close", "footer")
+        buttons.data_button("❌ Cᴀɴᴄᴇʟ", f"userset {user_id} close", "footer")
         btns = buttons.build_menu(2)
 
         text = f"""⌬ <b>FF Sᴇᴛᴛɪɴɢs :</b>
@@ -646,7 +646,7 @@ async def get_user_settings(from_user, stype="main"):
         )
 
         buttons.data_button("⏪ Bᴀᴄᴋ", f"userset {user_id} back", "footer")
-        buttons.data_button("Cʟᴏsᴇ", f"userset {user_id} close", "footer")
+        buttons.data_button("❌ Cᴀɴᴄᴇʟ", f"userset {user_id} close", "footer")
         btns = buttons.build_menu(1)
 
         text = f"""⌬ <b>Aᴅᴠᴀɴᴄᴇᴅ Sᴇᴛᴛɪɴɢs :</b>
@@ -695,7 +695,7 @@ async def get_user_settings(from_user, stype="main"):
         )
 
         buttons.data_button("⏪ Bᴀᴄᴋ", f"userset {user_id} back mirror", "footer")
-        buttons.data_button("Cʟᴏsᴇ", f"userset {user_id} close", "footer")
+        buttons.data_button("❌ Cᴀɴᴄᴇʟ", f"userset {user_id} close", "footer")
         btns = buttons.build_menu(2)
 
         text = f"""⌬ <b>YᴏᴜTᴜʙᴇ Tᴏᴏʟs Sᴇᴛᴛɪɴɢs:</b>
@@ -914,7 +914,7 @@ async def get_menu(option, message, user_id):
     else:
         back_to = "back"
     buttons.data_button("⏪ Bᴀᴄᴋ", f"userset {user_id} {back_to}", "footer")
-    buttons.data_button("Cʟᴏsᴇ", f"userset {user_id} close", "footer")
+    buttons.data_button("❌ Cᴀɴᴄᴇʟ", f"userset {user_id} close", "footer")
     val = user_dict.get(option)
     if option in file_dict and await aiopath.exists(file_dict[option]):
         val = "<b>Exists</b>"
@@ -1037,9 +1037,9 @@ async def edit_user_settings(client, query):
         await query.answer()
         buttons = ButtonMaker()
         text = user_settings_text[data[3]][2]
-        buttons.data_button("Stop", f"userset {user_id} menu {data[3]} stop")
-        buttons.data_button("Back", f"userset {user_id} menu {data[3]}", "footer")
-        buttons.data_button("Close", f"userset {user_id} close", "footer")
+        buttons.data_button("🚫 Sᴛᴏᴘ", f"userset {user_id} menu {data[3]} stop")
+        buttons.data_button("⏪ Bᴀᴄᴋ", f"userset {user_id} menu {data[3]}", "footer")
+        buttons.data_button("❌ Cʟᴏsᴇ", f"userset {user_id} close", "footer")
         prompt_title = data[3].replace("_", " ").title()
         new_message_text = f"⌬ <b>Set {prompt_title}</b>\n\n{text}"
         await edit_message(message, new_message_text, buttons.build_menu(1))
@@ -1065,9 +1065,9 @@ async def edit_user_settings(client, query):
         elif data[2] == "rmone":
             text = f"Remove one or more key from {data[3]}. Example: key 1/key2/key 3. Timeout: 60 sec"
             func = remove_one
-        buttons.data_button("Sᴛᴏᴘ", f"userset {user_id} menu {data[3]} stop")
+        buttons.data_button("🚫 Sᴛᴏᴘ", f"userset {user_id} menu {data[3]} stop")
         buttons.data_button("⏪ Bᴀᴄᴋ", f"userset {user_id} menu {data[3]}", "footer")
-        buttons.data_button("Cʟᴏsᴇ", f"userset {user_id} close", "footer")
+        buttons.data_button("❌ Cʟᴏsᴇ", f"userset {user_id} close", "footer")
         await edit_message(
             message, message.text.html + "\n\n" + text, buttons.build_menu(1)
         )
@@ -1108,7 +1108,7 @@ async def edit_user_settings(client, query):
         buttons = ButtonMaker()
         buttons.data_button("Yᴇs", f"userset {user_id} do_reset_all yes")
         buttons.data_button("Nᴏ", f"userset {user_id} do_reset_all no")
-        buttons.data_button("Cʟᴏsᴇ", f"userset {user_id} close", "footer")
+        buttons.data_button("❌ Cʟᴏsᴇ", f"userset {user_id} close", "footer")
         text = "<i>Are you sure you want to reset all your user settings?</i>"
         await edit_message(query.message, text, buttons.build_menu(2))
     elif data[2] == "do_reset_all":
