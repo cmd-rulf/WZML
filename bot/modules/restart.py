@@ -101,7 +101,7 @@ async def restart_notification():
             await TgClient.bot.edit_message_text(
                 chat_id=chat_id,
                 message_id=msg_id,
-                text=f""<b><i>Rᴇsᴛᴀʀᴛᴇᴅ Sᴜᴄᴄᴇssғᴜʟʟʏ ✅</i></b>
+                text=f"""<b><i>Rᴇsᴛᴀʀᴛᴇᴅ Sᴜᴄᴄᴇssғᴜʟʟʏ ✅"</i></b>
 ┟ <b>Dᴀᴛᴇ:</b> {now.strftime("%d/%m/%y")}
 ┠ <b>Tɪᴍᴇ:</b> {now.strftime("%I:%M:%S %p")}
 ┠ <b>TɪᴍᴇZᴏɴᴇ:</b> Asia/Kolkata
