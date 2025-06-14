@@ -40,17 +40,18 @@ class MirrorStatus:
 
 class EngineStatus:
     def __init__(self):
-        self.STATUS_ARIA2 = f"📶 Aʀɪᴀ𝟸 <code>v{bot_cache['eng_versions']['aria2']}</code>"
-        self.STATUS_AIOHTTP = f"🌐 AɪᴏHᴛᴛᴘ <code>v{bot_cache['eng_versions']['aiohttp']}</code>"
-        self.STATUS_GDAPI = f"♻️ Gᴏᴏɢʟᴇ-Aᴘɪ <code>v{bot_cache['eng_versions']['gapi']}</code>"
-        self.STATUS_QBIT = f"🦠 ǫBɪᴛ <code>v{bot_cache['eng_versions']['qBittorrent']}</code>"
-        self.STATUS_TGRAM = f"💥 PʏʀᴏFᴏʀᴋ <code>v{bot_cache['eng_versions']['pyrofork']}</code>"
-        self.STATUS_MEGA = f"⭕️ MᴇɢᴀSᴅᴋ <code>v{bot_cache['eng_versions']['mega']}</code>"
-        self.STATUS_YTDLP = f"⭐ ʏᴛ-ᴅʟᴘ <code>v{bot_cache['eng_versions']['yt-dlp']}</code>"
-        self.STATUS_FFMPEG = f"🍿 FғMᴘᴇɢ <code>v{bot_cache['eng_versions']['ffmpeg']}</code>"
-        self.STATUS_7Z = f"🛠 7zɪᴘ <code>v{bot_cache['eng_versions']['7z']}</code>"
-        self.STATUS_RCLONE = f"🍻 RCʟᴏɴᴇ <code>v{bot_cache['eng_versions']['rclone']}</code>"
-        self.STATUS_SABNZBD = f"🐙 SABɴᴢʙᴅ+ <code>v{bot_cache['eng_versions']['SABnzbd+']}</code>"
+       #self.STATUS_SABNZBD = f"🐙 SABɴᴢʙᴅ+ <code>v{bot_cache['eng_versions']['SABnzbd+']}</code>"
+        self.STATUS_ARIA2 = f"📶 Aʀɪᴀ𝟸 "
+        self.STATUS_AIOHTTP = f"🌐 AɪᴏHᴛᴛᴘ "
+        self.STATUS_GDAPI = f"♻️ Gᴏᴏɢʟᴇ-Aᴘɪ "
+        self.STATUS_QBIT = f"🦠 ǫBɪᴛ "
+        self.STATUS_TGRAM = f"💥 PʏʀᴏFᴏʀᴋ "
+        self.STATUS_MEGA = f"⭕️ MᴇɢᴀSᴅᴋ "
+        self.STATUS_YTDLP = f"⭐ ʏᴛ-ᴅʟᴘ "
+        self.STATUS_FFMPEG = f"🍿 FғMᴘᴇɢ "
+        self.STATUS_7Z = f"🛠 7zɪᴘ "
+        self.STATUS_RCLONE = f"🍻 RCʟᴏɴᴇ "
+        self.STATUS_SABNZBD = f"🐙 SABɴᴢʙᴅ+ "
         self.STATUS_QUEUE = "💤 QSʏsᴛᴇᴍ v2"
         self.STATUS_JD = "☠️ JDᴏᴡɴʟᴏᴀᴅᴇʀ v2"
         self.STATUS_YT = "♨️ Yᴏᴜᴛᴜʙᴇ-Aᴘɪ"
@@ -238,9 +239,9 @@ async def get_readable_message(sid, is_user, page_no=1, status="All", page_step=
             tstatus not in [MirrorStatus.STATUS_SEED, MirrorStatus.STATUS_QUEUEUP]
             and task.listener.progress
         ):
-            msg += f"\n┎ {tstatus}"
+            msg += f"\n┎ <b>{tstatus}</b>"
             progress = task.progress()
-            msg += f"\n┃ {get_progress_bar_string(progress)} <i>{progress}</i>"
+            msg += f"\n┃ {get_progress_bar_string(progress)} » <i>{progress}</i>"
             if task.listener.subname:
                 subsize = f" / {get_readable_file_size(task.listener.subsize)}"
                 ac = len(task.listener.files_to_proceed)
@@ -272,7 +273,7 @@ async def get_readable_message(sid, is_user, page_no=1, status="All", page_step=
             msg += f"\n┠ <b>Time:</b> <i>{task.seeding_time()}</i> | <b>Elapsed:</b> <i>{get_readable_time(elapsed)}</i>"
         else:
             msg += f"\n┠ <b>Sɪᴢᴇ:</b> <code>{task.size()}</code>"
-        msg += f"\n┠ <b>Usᴇʀ:</b> {task.listener.message.from_user.mention(style='html')} | <code>{task.listener.message.from_user.id}</code>"
+        msg += f"\n┠ <b>Usᴇʀ:</b> {task.listener.message.from_user.mention} | <code>{task.listener.message.from_user.id}</code>"
         # TODO: Add Bt Sel
         msg += f"\n<b>┖ Sᴛᴏᴘ:</b> <i>/{BotCommands.CancelTaskCommand[1]}_{task.gid()}</i>\n\n"
 
