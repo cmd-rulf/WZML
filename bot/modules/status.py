@@ -47,8 +47,8 @@ async def task_status(_, message):
 ┖ <b>NOTE</b> → <i>Each user can get status for his tasks by adding "me" or user_id like "1234xxx" after cmd: /{BotCommands.StatusCommand[0]} me or /{BotCommands.StatusCommand[1]} me</i>
 
 ⌬ <b><u>Bᴏᴛ Sᴛᴀᴛs...</u></b>
-┟ <b>🖥️ Cᴘᴜ</b> → {cpu_percent()}% | <b>💿 F</b> → {free} [{round(100 - disk_usage(DOWNLOAD_DIR).percent, 1)}%]
-┖ <b>🎮 Rᴀᴍ</b> → {virtual_memory().percent}% | <b>🚀 Uᴘᴛɪᴍᴇ</b> → {currentTime}
+┟ <b>🖥️ Cᴘᴜ:</b> {cpu_percent()}% | <b>💿 F:</b> {free}
+┖ <b>🎮 Rᴀᴍ:</b> {virtual_memory().percent}% | <b>🚀 Uᴘᴛɪᴍᴇ:</b> {currentTime}
 """
         reply_message = await send_message(message, msg)
         await auto_delete_message(message, reply_message)
@@ -195,7 +195,7 @@ async def status_pages(_, query):
                 case _:
                     tasks["Download"] += 1
 
-        msg = f"""㊂ <b>Tasks Overview</b> :
+        msg = f"""㊂ <b>Tasks Overview 🍻</b> :
         
 ┎ <b>Download:</b> {tasks["Download"]} | <b>Upload:</b> {tasks["Upload"]}
 ┠ <b>Seed:</b> {tasks["Seed"]} | <b>Archive:</b> {tasks["Archive"]}
