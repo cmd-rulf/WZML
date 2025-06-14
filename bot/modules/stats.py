@@ -59,7 +59,7 @@ commands = {
 async def get_stats(event, key="home"):
     user_id = event.from_user.id
     btns = ButtonMaker()
-    btns.data_button("Back", f"stats {user_id} home")
+    btns.data_button("⏪ Bᴀᴄᴋ", f"stats {user_id} home")
     if key == "home":
         btns = ButtonMaker()
         btns.data_button("Bᴏᴛ Sᴛᴀᴛs", f"stats {user_id} stbot")
@@ -132,8 +132,8 @@ async def get_stats(event, key="home"):
                 True,
             )
         )[0]
-        msg = f"""<b><i>Repo Statistics 📊 :</i></b>
-│
+        msg = f"""<b><u>Repo Statistics 📊 :</u></b>
+
 ┟ <b>Bᴏᴛ Uᴘᴅᴀᴛᴇᴅ :</b> {last_commit}
 ┠ <b>Cᴜʀʀᴇɴᴛ Vᴇʀsɪᴏɴ :</b> {get_version()}
 ┠ <b>Lᴀᴛᴇsᴛ Vᴇʀsɪᴏɴ :</b> {official_v}
@@ -142,8 +142,8 @@ async def get_stats(event, key="home"):
 <b>🧬 REMARKS :</b> <code>{compare_versions(get_version(), official_v)}</code>
     """
     elif key == "stpkgs":
-        msg = f"""<b><i>PACKAGES STATISTICS 📚 :</i></b>
-│
+        msg = f"""<b><u>PACKAGES STATISTICS 📚 :</u></b>
+
 ┟ <b>🐍 Pʏᴛʜᴏɴ:</b> {bot_cache["eng_versions"]["python"]}
 ┠ <b>📶 Aʀɪᴀ𝟸:</b> {bot_cache["eng_versions"]["aria2"]}
 ┠ <b>🦠 ǫBɪᴛ:</b> {bot_cache["eng_versions"]["qBittorrent"]}
@@ -158,8 +158,8 @@ async def get_stats(event, key="home"):
 ┖ <b>⭕️ MᴇɢᴀSᴅᴋ:</b> {bot_cache["eng_versions"]["mega"]}
 """
     elif key == "tlimits":
-        msg = f"""<b><i>BOT LIMITATIONS 🚧 :</i></b>
-│
+        msg = f"""<b><u>BOT LIMITATIONS 🚧 :</u></b>
+        
 ┟ <b>🎯 Dɪʀᴇᴄᴛ :</b> {Config.DIRECT_LIMIT or "∞"} GB
 ┠ <b>🧲 Tᴏʀʀᴇɴᴛ :</b> {Config.TORRENT_LIMIT or "∞"} GB
 ┠ <b>☁️ GDʀɪᴠᴇ :</b> {Config.GD_DL_LIMIT or "∞"} GB
