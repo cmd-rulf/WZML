@@ -51,7 +51,7 @@ async def select_format(_, query, obj):
     elif data[1] == "back":
         await obj.back_to_main()
     elif data[1] == "cancel":
-        await edit_message(message, "Task has been cancelled.")
+        await edit_message(message, "Tɪᴍᴇᴅ Oᴜᴛ. Tᴀsᴋ ʜᴀs ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ.")
         obj.qual = None
         obj.listener.is_cancelled = True
         obj.event.set()
@@ -89,7 +89,7 @@ class YtSelection:
         try:
             await wait_for(self.event.wait(), timeout=self._timeout)
         except Exception:
-            await edit_message(self._reply_to, "Timed Out. Task has been cancelled!")
+            await edit_message(self._reply_to, "Tɪᴍᴇᴅ Oᴜᴛ. Tᴀsᴋ ʜᴀs ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ!")
             self.qual = None
             self.listener.is_cancelled = True
             self.event.set()
@@ -110,12 +110,12 @@ class YtSelection:
                 self.formats[b_data] = video_format
                 buttons.data_button(f"{i}-webm", f"ytq {b_data}")
             buttons.data_button("MP3", "ytq mp3")
-            buttons.data_button("Audio Formats", "ytq audio")
-            buttons.data_button("Best Videos", "ytq bv*+ba/b")
-            buttons.data_button("Best Audios", "ytq ba/b")
-            buttons.data_button("Cancel", "ytq cancel", "footer")
+            buttons.data_button("Aᴜᴅɪᴏ Fᴏʀᴍᴀᴛs", "ytq audio")
+            buttons.data_button("Bᴇsᴛ Vɪᴅᴇᴏs", "ytq bv*+ba/b")
+            buttons.data_button("Bᴇsᴛ Aᴜᴅɪᴏs", "ytq ba/b")
+            buttons.data_button("Cᴀɴᴄᴇʟ", "ytq cancel", "footer")
             self._main_buttons = buttons.build_menu(3)
-            msg = f"Choose Playlist Videos Quality:\nTimeout: {get_readable_time(self._timeout - (time() - self._time))}"
+            msg = f"Cʜᴏᴏsᴇ Pʟᴀʏʟɪsᴛ Vɪᴅᴇᴏs Qᴜᴀʟɪᴛʏ:\nTɪᴍᴇᴏᴜᴛ: {get_readable_time(self._timeout - (time() - self._time))}"
         else:
             format_dict = result.get("formats")
             if format_dict is not None:
@@ -163,12 +163,12 @@ class YtSelection:
                     else:
                         buttons.data_button(b_name, f"ytq dict {b_name}")
             buttons.data_button("MP3", "ytq mp3")
-            buttons.data_button("Audio Formats", "ytq audio")
-            buttons.data_button("Best Video", "ytq bv*+ba/b")
-            buttons.data_button("Best Audio", "ytq ba/b")
-            buttons.data_button("Cancel", "ytq cancel", "footer")
+            buttons.data_button("Aᴜᴅɪᴏ Fᴏʀᴍᴀᴛs", "ytq audio")
+            buttons.data_button("Bᴇsᴛ Vɪᴅᴇᴏs", "ytq bv*+ba/b")
+            buttons.data_button("Bᴇsᴛ Aᴜᴅɪᴏs", "ytq ba/b")
+            buttons.data_button("Cᴀɴᴄᴇʟ", "ytq cancel", "footer")
             self._main_buttons = buttons.build_menu(2)
-            msg = f"Choose Video Quality:\nTimeout: {get_readable_time(self._timeout - (time() - self._time))}"
+            msg = f"Cʜᴏᴏsᴇ Vɪᴅᴇᴏs Qᴜᴀʟɪᴛʏ:\nTɪᴍᴇᴏᴜᴛ: {get_readable_time(self._timeout - (time() - self._time))}"
         self._reply_to = await send_message(
             self.listener.message, msg, self._main_buttons
         )
@@ -179,9 +179,9 @@ class YtSelection:
 
     async def back_to_main(self):
         if self._is_playlist:
-            msg = f"Choose Playlist Videos Quality:\nTimeout: {get_readable_time(self._timeout - (time() - self._time))}"
+            msg = f"Cʜᴏᴏsᴇ Pʟᴀʏʟɪsᴛ Vɪᴅᴇᴏs Qᴜᴀʟɪᴛʏ:\nTɪᴍᴇᴏᴜᴛ: {get_readable_time(self._timeout - (time() - self._time))}"
         else:
-            msg = f"Choose Video Quality:\nTimeout: {get_readable_time(self._timeout - (time() - self._time))}"
+            msg = f"Cʜᴏᴏsᴇ Vɪᴅᴇᴏs Qᴜᴀʟɪᴛʏ:\nTɪᴍᴇᴏᴜᴛ: {get_readable_time(self._timeout - (time() - self._time))}"
         await edit_message(self._reply_to, msg, self._main_buttons)
 
     async def qual_subbuttons(self, b_name):
@@ -190,8 +190,8 @@ class YtSelection:
         for tbr, d_data in tbr_dict.items():
             button_name = f"{tbr}K ({get_readable_file_size(d_data[0])})"
             buttons.data_button(button_name, f"ytq sub {b_name} {tbr}")
-        buttons.data_button("Back", "ytq back", "footer")
-        buttons.data_button("Cancel", "ytq cancel", "footer")
+        buttons.data_button("⏪ Bᴀᴄᴋ", "ytq back", "footer")
+        buttons.data_button("Cᴀɴᴄᴇʟ", "ytq cancel", "footer")
         subbuttons = buttons.build_menu(2)
         msg = f"Choose Bit rate for <b>{b_name}</b>:\nTimeout: {get_readable_time(self._timeout - (time() - self._time))}"
         await edit_message(self._reply_to, msg, subbuttons)
@@ -203,8 +203,8 @@ class YtSelection:
         for q in audio_qualities:
             audio_format = f"ba/b-mp3-{q}"
             buttons.data_button(f"{q}K-mp3", f"ytq {audio_format}")
-        buttons.data_button("Back", "ytq back")
-        buttons.data_button("Cancel", "ytq cancel")
+        buttons.data_button("⏪ Bᴀᴄᴋ", "ytq back")
+        buttons.data_button("Cᴀɴᴄᴇʟ", "ytq cancel")
         subbuttons = buttons.build_menu(3)
         msg = f"Choose mp3 Audio{i} Bitrate:\nTimeout: {get_readable_time(self._timeout - (time() - self._time))}"
         await edit_message(self._reply_to, msg, subbuttons)
@@ -215,7 +215,7 @@ class YtSelection:
         for frmt in ["aac", "alac", "flac", "m4a", "opus", "vorbis", "wav"]:
             audio_format = f"ba/b-{frmt}-"
             buttons.data_button(frmt, f"ytq aq {audio_format}")
-        buttons.data_button("Back", "ytq back", "footer")
+        buttons.data_button("⏪ Bᴀᴄᴋ", "ytq back", "footer")
         buttons.data_button("Cancel", "ytq cancel", "footer")
         subbuttons = buttons.build_menu(3)
         msg = f"Choose Audio{i} Format:\nTimeout: {get_readable_time(self._timeout - (time() - self._time))}"
@@ -227,8 +227,8 @@ class YtSelection:
         for qual in range(11):
             audio_format = f"{format}{qual}"
             buttons.data_button(qual, f"ytq {audio_format}")
-        buttons.data_button("Back", "ytq aq back")
-        buttons.data_button("Cancel", "ytq aq cancel")
+        buttons.data_button("⏪ Bᴀᴄᴋ", "ytq aq back")
+        buttons.data_button("Cᴀɴᴄᴇʟ", "ytq aq cancel")
         subbuttons = buttons.build_menu(5)
         msg = f"Choose Audio{i} Qaulity:\n0 is best and 10 is worst\nTimeout: {get_readable_time(self._timeout - (time() - self._time))}"
         await edit_message(self._reply_to, msg, subbuttons)
