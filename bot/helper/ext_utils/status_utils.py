@@ -40,7 +40,7 @@ class MirrorStatus:
 
 class EngineStatus:
     def __init__(self):
-        self.STATUS_ARIA2 = f"📶 Aʀɪᴀ𝟸 <code>v{bot_cache['eng_versions']['aria2']}</code>"Add commentMore actions
+        self.STATUS_ARIA2 = f"📶 Aʀɪᴀ𝟸 <code>v{bot_cache['eng_versions']['aria2']}</code>"
         self.STATUS_AIOHTTP = f"🌐 AɪᴏHᴛᴛᴘ <code>v{bot_cache['eng_versions']['aiohttp']}</code>"
         self.STATUS_GDAPI = f"♻️ Gᴏᴏɢʟᴇ-Aᴘɪ <code>v{bot_cache['eng_versions']['gapi']}</code>"
         self.STATUS_QBIT = f"🦠 ǫBɪᴛ <code>v{bot_cache['eng_versions']['qBittorrent']}</code>"
