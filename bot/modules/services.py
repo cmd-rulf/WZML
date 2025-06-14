@@ -162,10 +162,10 @@ async def login(_, message):
 @new_task
 async def ping(_, message):
     start_time = monotonic()
-    reply = await send_message(message, "<i>Starting Ping...🎮</i>")
+    reply = await send_message(message, "<i>Sᴛᴀʀᴛɪɴɢ Pɪɴɢ...🌋</i>")
     end_time = monotonic()
     await edit_message(
-        reply, f"🎯 Pɪɴɢ:<code>{int((end_time - start_time) * 1000)} ms</code>"
+        reply, f"🎯 Pɪɴɢ: <code>{int((end_time - start_time) * 1000)} ms</code>"
     )
 
 
@@ -173,9 +173,9 @@ async def ping(_, message):
 async def log(_, message):
     uid = message.from_user.id
     buttons = ButtonMaker()
-    buttons.data_button("Log Disp", f"log {uid} disp")
-    buttons.data_button("Web Log", f"log {uid} web")
-    buttons.data_button("Close", f"log {uid} close")
+    buttons.data_button("Lᴏɢ Dɪsᴘ", f"log {uid} disp")
+    buttons.data_button("Wᴇʙ Lᴏɢ", f"log {uid} web")
+    buttons.data_button("Cʟᴏsᴇ", f"log {uid} close")
     await send_file(message, "log.txt", buttons=buttons.build_menu(2))
 
 
