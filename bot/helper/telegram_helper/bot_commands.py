@@ -56,7 +56,7 @@ class BotCommands:
             [
                 (
                     f"{cmd}{Config.CMD_SUFFIX}"
-                    if cmd not in ["restartall", "statusall"]
+                    if cmd not in ["restartall", "sall"]
                     else cmd
                 )
                 for cmd in cmds
