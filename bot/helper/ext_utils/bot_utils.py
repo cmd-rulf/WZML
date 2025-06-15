@@ -108,7 +108,7 @@ def bt_selection_buttons(id_):
         buttons.url_button(
             "Sᴇʟᴇᴄᴛ Fɪʟᴇs", f"{Config.BASE_URL}/app/files?gid={id_}&pin={pin}"
         )
-    buttons.data_button("Dᴏɴᴇ Sᴇʟᴇᴄᴛɪɴɢ ✅", f"sel done {gid} {id_}")
+    buttons.data_button("Dᴏɴᴇ ✅", f"sel done {gid} {id_}")
     buttons.data_button("Cᴀɴᴄᴇʟ ❌", f"sel cancel {gid}")
     return buttons.build_menu(2)
 
