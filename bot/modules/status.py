@@ -205,9 +205,9 @@ async def status_pages(_, query):
 ┠ <b>Pᴀᴜsᴇᴅ:</b> {tasks["Pause"]} | <b>SᴀᴍVɪᴅᴇᴏ:</b> {tasks["SamVid"]}
 ┞ <b>Cᴏɴᴠᴇʀᴛ:</b> {tasks["ConvertMedia"]} | <b>FFᴍᴘᴇɢ:</b> {tasks["FFmpeg"]}
 │
-┟ <b>Tᴏᴛᴀʟ Dᴏᴡɴʟᴏᴀᴅ Sᴘᴇᴇᴅ:</b> {get_readable_file_size(dl_speed)}/s
-┠ <b>Tᴏᴛᴀʟ Uᴘʟᴏᴀᴅ Sᴘᴇᴇᴅ:</b> {get_readable_file_size(up_speed)}/s
-┖ <b>Tᴏᴛᴀʟ Sᴇᴇᴅɪɴɢ Sᴘᴇᴇᴅ:</b> {get_readable_file_size(seed_speed)}/s
+┟ <b>🔻 Dᴏᴡɴʟᴏᴀᴅ Sᴘᴇᴇᴅ:</b> {get_readable_file_size(dl_speed)}/s
+┠ <b>🔺 Uᴘʟᴏᴀᴅ Sᴘᴇᴇᴅ:</b> {get_readable_file_size(up_speed)}/s
+┖ <b>🍃 Sᴇᴇᴅɪɴɢ Sᴘᴇᴇᴅ:</b> {get_readable_file_size(seed_speed)}/s
 """
         button = ButtonMaker()
         button.data_button("⏪ Bᴀᴄᴋ", f"status {data[1]} ref")
