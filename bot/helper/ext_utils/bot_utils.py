@@ -102,14 +102,14 @@ def bt_selection_buttons(id_):
     pin = "".join([n for n in id_ if n.isdigit()][:4])
     buttons = ButtonMaker()
     if Config.WEB_PINCODE:
-        buttons.url_button("Select Files", f"{Config.BASE_URL}/app/files?gid={id_}")
-        buttons.data_button("Pincode", f"sel pin {gid} {pin}")
+        buttons.url_button("Sᴇʟᴇᴄᴛ Fɪʟᴇs", f"{Config.BASE_URL}/app/files?gid={id_}")
+        buttons.data_button("Pɪɴᴄᴏᴅᴇ", f"sel pin {gid} {pin}")
     else:
         buttons.url_button(
-            "Select Files", f"{Config.BASE_URL}/app/files?gid={id_}&pin={pin}"
+            "Sᴇʟᴇᴄᴛ Fɪʟᴇs", f"{Config.BASE_URL}/app/files?gid={id_}&pin={pin}"
         )
-    buttons.data_button("Done Selecting", f"sel done {gid} {id_}")
-    buttons.data_button("Cancel", f"sel cancel {gid}")
+    buttons.data_button("Dᴏɴᴇ Sᴇʟᴇᴄᴛɪɴɢ ✅", f"sel done {gid} {id_}")
+    buttons.data_button("Cᴀɴᴄᴇʟ ❌", f"sel cancel {gid}")
     return buttons.build_menu(2)
 
 
