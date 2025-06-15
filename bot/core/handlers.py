@@ -404,10 +404,10 @@ def add_handlers():
                 6,
             )
 
-        if Config.LOGIN_PASS:
-            BOT_COMMANDS = insert_at(
-                BOT_COMMANDS, "Login", "[password] Login to Bot", 14
-            )
+       # if Config.LOGIN_PASS:
+           # BOT_COMMANDS = insert_at(
+             #   BOT_COMMANDS, "Login", "[password] Login to Bot", 14
+         #   )
 
         TgClient.bot.set_bot_commands(
             [
